@@ -9,7 +9,7 @@
 # }
 
 module "infra_mgmt_host" {
-  source = "../../../../../../../modules/compute_engine/linux_vm"
+  source = "git::https://github.com/prashantpawar29/tf-test.git//root-module?ref=root"
   count  = length(var.infra_mgmt_host)
 
   /* global */

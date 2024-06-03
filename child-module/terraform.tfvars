@@ -1,23 +1,23 @@
 #Global
-project_id = "<project-id>"
+project_id = "searce-playground-v1"
 region     = "asia-south1"
 
 #Network Interface
-network    = "dev-main-vpc"
-subnetwork = "dev-mgmt-apps-asia-sth1-subnet"
+network    = "prashant-vpc"
+subnetwork = "gce-subnet"
 
-disk_snapshot_policy_name = "dev-infra-mgmt-host-disk-snapshot-policy"
+#disk_snapshot_policy_name = "dev-infra-mgmt-host-disk-snapshot-policy"
 
 #Access scopes 
 service_account = {
-  email  = "dev-infra-mgmt-host-gce-sa@<project-id>.iam.gserviceaccount.com"
+  email  = "vaishnavi-unde-sa@searce-playground-v1.iam.gserviceaccount.com"
   scopes = ["cloud-platform"]
 }
 
 infra_mgmt_host = [
   {
     machine_type = "e2-medium"
-    machine_name = "dev-infra-mgmt-host-asia-sth1-a"
+    machine_name = "prashant-tf-test-vm"
     machine_zone = "asia-south1-a"
     instance_labels = {
       env = "dev"
@@ -33,7 +33,7 @@ infra_mgmt_host = [
       disk_type    = "pd-standard"
     }
     /*data_disk_info = {
-      disk_name    = "dev-infra-mgmt-host-asia-sth1-a-01-data01-disk"
+      disk_name    = "prashant-tf-test-data01-disk"
       disk_size_gb = 50
       disk_type    = "pd-ssd"
     }*/
