@@ -20,11 +20,11 @@ infra_mgmt_host = [
     machine_name = "prashant-tf-test-vm"
     machine_zone = "asia-south1-a"
     instance_labels = {
-      env = "dev"
-      app = "mgmt-host"
+      owner = "prashant_pawar_searce_com"
+      owned_by = "prashant_pawar"
     }
     network_tags          = ["allow-iap-access"]
-    vm_deletion_protect   = true
+    vm_deletion_protect   = false
     internal_ip           = ""
     enable_external_ip    = false
     boot_disk_auto_delete = false
@@ -39,7 +39,7 @@ infra_mgmt_host = [
     }*/
     disk_labels = {
       env = "dev"
-      app = "mgmt-host"
+      app = "test-vm"
     }
   },
 ]
