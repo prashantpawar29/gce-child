@@ -9,7 +9,7 @@
 # }
 
 module "infra_mgmt_host" {
-  source = "git::https://github.com/prashantpawar29/tf-test.git//root-module?ref=root"
+  source = "git::https://github.com/prashantpawar29/gce-root.git//root-module?ref=v1.0"
   count  = length(var.infra_mgmt_host)
 
   /* global */
