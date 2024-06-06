@@ -9,7 +9,7 @@
 # }
 
 module "infra_mgmt_host" {
-  source = "git::https://github.com/prashantpawar29/gce-root.git//root-module?ref=main"
+  source = "git::https://github.com/prashantpawar29/gce-root.git//root-module?ref=v1.3"
   count  = length(var.infra_mgmt_host)
 
   /* global */
@@ -34,6 +34,7 @@ module "infra_mgmt_host" {
   /* disk details */
   auto_delete          = var.infra_mgmt_host[count.index]["boot_disk_auto_delete"]
   boot_disk_info       = var.infra_mgmt_host[count.index]["boot_disk0_info"]
+  data_disk_info       = var.infra_mgmt_host[count.index]["data_disk_info"]
   disk_labels          = var.infra_mgmt_host[count.index]["disk_labels"]
   #snapshot_policy_name = module.disk_policy_creation.policy_name
 
@@ -44,15 +45,16 @@ module "infra_mgmt_host" {
   metadata = {}
 }
 
+/* Data disk */
 /*
 module "attach_data_disk" {
-  source               = "../../../../../../../modules/compute_engine/attach_data_disk"
+  source               = "git::https://github.com/prashantpawar29/gce-root.git//attach_data_disk?ref=main"
   count                = length(var.infra_mgmt_host)
   compute_instance_id  = module.infra_mgmt_host[count.index].compute_instance_id
   machine_zone         = module.infra_mgmt_host[count.index].machine_zone
   data_disk_info       = var.infra_mgmt_host[count.index]["data_disk_info"]
   disk_labels          = var.infra_mgmt_host[count.index]["disk_labels"]
-  snapshot_policy_name = module.disk_policy_creation.policy_name
+  #snapshot_policy_name = module.disk_policy_creation.policy_name
 }
 */
 

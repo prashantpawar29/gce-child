@@ -32,11 +32,11 @@ infra_mgmt_host = [
       disk_size_gb = 30
       disk_type    = "pd-standard"
     }
-    /*data_disk_info = {
-      disk_name    = "prashant-tf-test-data01-disk"
-      disk_size_gb = 50
+    data_disk_info = {
+      disk_name    = "prashant-tf-test-vm-data-disk"
+      disk_size_gb = 10
       disk_type    = "pd-ssd"
-    }*/
+    }
     disk_labels = {
       env = "dev"
       app = "test-vm"

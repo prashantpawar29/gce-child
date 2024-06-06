@@ -52,3 +52,14 @@ variable "ssh_keys" {
 variable "infra_mgmt_host" {
   description = "Managemnent VM's details"
 }
+
+/*
+variable "data_disk_info" {
+  description = "Information about the data disk"
+  type = object({
+    disk_name = string
+    disk_size_gb = number
+    disk_type    = string
+  })
+}
+*/
